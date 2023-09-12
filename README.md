@@ -34,6 +34,7 @@ sh start-fresh.sh
 It will take quite sometimes until you can access 
 backend: http://localhost:8000/api (with multiple microservices ready)
 frontend: http://localhost:8080 (it redirect you to keycloak login page)
+![Backend image](./images/backend.jpg)
 
 4. `Ctrl-c` to stop the cli, future start frontend and backend separately
 ```sh

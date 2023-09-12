@@ -1,0 +1,17 @@
+{
+    "definationsFolder":"./definations",
+    "backendFolder":"./backend", 
+    "backendPort":"8000",
+    "mongoConnectStr":"mongodb://localhost:27017/admin?authMechanism=DEFAULT",
+    "frontendFolder":"./frontend",
+    "frontendPort":"8080",
+    "openapi3Yaml":"./openapi.yaml",
+    "keycloaksetting":{
+        "OAUTH2_BASEURL":"https://keycloak-server-url",
+        "OAUTH2_REALM":"realm-name",
+        "OAUTH2_CONFIGURL":"https://keycloak-server-url",
+        "OAUTH2_CLIENTID":"client-id",
+        "OAUTH2_CLIENTSECRET":"client-secret-value",
+        "AUTH_SECRET_KEY":"my-secret-key"    
+    }
+}

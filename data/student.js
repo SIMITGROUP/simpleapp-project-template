@@ -1,0 +1,22 @@
+let student = {
+    organization_id:1,
+    branch_id:1,    
+    student_id:100,
+    student_code: 'ORGS001',
+    student_name: 'Student 1',
+    description:'',
+    isactive:true,
+    gender:'M',
+    dob: '2000-01-01',
+    email: 'student1@abc.com',
+    leadsoruce:{id:11, label:'facebook'},
+    ic:'111222333',
+    idcard:'29387232',
+    studentgroup:{id:100,label:'GroupA'},
+    race:{id:100,label:'Chinese'},
+    religion:{id:100,label:'Buddha'},
+    level:{id:1,label:'level 1'},
+    school:{id:1,label:'SJK ABC'},
+    tags:['talented','talkative'],
+    histories: [{time:'2000-01-01T10:11:12',history_info:'come to school'}]
+  }

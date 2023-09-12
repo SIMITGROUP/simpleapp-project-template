@@ -1,0 +1,1211 @@
+openapi: 3.0.0
+paths:
+  /cat:
+    get:
+      operationId: runList
+      summary: ''
+      description: List all data
+      parameters: []
+      responses:
+        '200':
+          description: Found
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Category'
+        '500':
+          description: Internal error
+      tags: &ref_0
+        - CAT
+    post:
+      operationId: runCreate
+      summary: ''
+      parameters: []
+      requestBody:
+        required: true
+        description: Data
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Category'
+      responses:
+        '201':
+          description: success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Category'
+        '400':
+          description: bad request
+        '500':
+          description: internal error
+      tags: *ref_0
+  /cat/autocomplete:
+    get:
+      operationId: autoComplete
+      summary: ''
+      description: retrieve array of {_id, code, name}
+      parameters:
+        - name: keyword
+          required: true
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/'
+        '500':
+          description: Internal error
+      tags: *ref_0
+  /cat/{id}:
+    get:
+      operationId: runFindOne
+      summary: ''
+      parameters:
+        - name: id
+          required: true
+          in: path
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Founds
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Category'
+        '404':
+          description: Document not found
+        '500':
+          description: Internal error
+      tags: *ref_0
+    put:
+      operationId: runUpdate
+      summary: ''
+      parameters:
+        - name: id
+          required: true
+          in: path
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: Data
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Category'
+      responses:
+        '200':
+          description: success
+        '404':
+          description: Document not found
+        '500':
+          description: Internal error
+      tags: *ref_0
+    delete:
+      operationId: runDelete
+      summary: ''
+      parameters:
+        - name: id
+          required: true
+          in: path
+          schema:
+            type: string
+      responses:
+        '200':
+          description: success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Category'
+        '404':
+          description: Document not found
+        '500':
+          description: Internal error
+      tags: *ref_0
+  /cat/search:
+    post:
+      operationId: runSearch
+      summary: ''
+      parameters: []
+      requestBody:
+        required: true
+        description: Data
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Object'
+      responses:
+        '201':
+          description: success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Category'
+        '400':
+          description: bad request
+        '500':
+          description: internal error
+      tags: *ref_0
+  /leadt:
+    get:
+      operationId: runList
+      summary: ''
+      description: List all data
+      parameters: []
+      responses:
+        '200':
+          description: Found
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Leadtype'
+        '500':
+          description: Internal error
+      tags: &ref_1
+        - LEADT
+    post:
+      operationId: runCreate
+      summary: ''
+      parameters: []
+      requestBody:
+        required: true
+        description: Data
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Leadtype'
+      responses:
+        '201':
+          description: success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Leadtype'
+        '400':
+          description: bad request
+        '500':
+          description: internal error
+      tags: *ref_1
+  /leadt/autocomplete:
+    get:
+      operationId: autoComplete
+      summary: ''
+      description: retrieve array of {_id, code, name}
+      parameters:
+        - name: keyword
+          required: true
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/'
+        '500':
+          description: Internal error
+      tags: *ref_1
+  /leadt/{id}:
+    get:
+      operationId: runFindOne
+      summary: ''
+      parameters:
+        - name: id
+          required: true
+          in: path
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Founds
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Leadtype'
+        '404':
+          description: Document not found
+        '500':
+          description: Internal error
+      tags: *ref_1
+    put:
+      operationId: runUpdate
+      summary: ''
+      parameters:
+        - name: id
+          required: true
+          in: path
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: Data
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Leadtype'
+      responses:
+        '200':
+          description: success
+        '404':
+          description: Document not found
+        '500':
+          description: Internal error
+      tags: *ref_1
+    delete:
+      operationId: runDelete
+      summary: ''
+      parameters:
+        - name: id
+          required: true
+          in: path
+          schema:
+            type: string
+      responses:
+        '200':
+          description: success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Leadtype'
+        '404':
+          description: Document not found
+        '500':
+          description: Internal error
+      tags: *ref_1
+  /leadt/search:
+    post:
+      operationId: runSearch
+      summary: ''
+      parameters: []
+      requestBody:
+        required: true
+        description: Data
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Object'
+      responses:
+        '201':
+          description: success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Leadtype'
+        '400':
+          description: bad request
+        '500':
+          description: internal error
+      tags: *ref_1
+  /lvl:
+    get:
+      operationId: runList
+      summary: ''
+      description: List all data
+      parameters: []
+      responses:
+        '200':
+          description: Found
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Level'
+        '500':
+          description: Internal error
+      tags: &ref_2
+        - LVL
+    post:
+      operationId: runCreate
+      summary: ''
+      parameters: []
+      requestBody:
+        required: true
+        description: Data
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Level'
+      responses:
+        '201':
+          description: success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Level'
+        '400':
+          description: bad request
+        '500':
+          description: internal error
+      tags: *ref_2
+  /lvl/autocomplete:
+    get:
+      operationId: autoComplete
+      summary: ''
+      description: retrieve array of {_id, code, name}
+      parameters:
+        - name: keyword
+          required: true
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/'
+        '500':
+          description: Internal error
+      tags: *ref_2
+  /lvl/{id}:
+    get:
+      operationId: runFindOne
+      summary: ''
+      parameters:
+        - name: id
+          required: true
+          in: path
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Founds
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Level'
+        '404':
+          description: Document not found
+        '500':
+          description: Internal error
+      tags: *ref_2
+    put:
+      operationId: runUpdate
+      summary: ''
+      parameters:
+        - name: id
+          required: true
+          in: path
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: Data
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Level'
+      responses:
+        '200':
+          description: success
+        '404':
+          description: Document not found
+        '500':
+          description: Internal error
+      tags: *ref_2
+    delete:
+      operationId: runDelete
+      summary: ''
+      parameters:
+        - name: id
+          required: true
+          in: path
+          schema:
+            type: string
+      responses:
+        '200':
+          description: success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Level'
+        '404':
+          description: Document not found
+        '500':
+          description: Internal error
+      tags: *ref_2
+  /lvl/search:
+    post:
+      operationId: runSearch
+      summary: ''
+      parameters: []
+      requestBody:
+        required: true
+        description: Data
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Object'
+      responses:
+        '201':
+          description: success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Level'
+        '400':
+          description: bad request
+        '500':
+          description: internal error
+      tags: *ref_2
+  /prd:
+    get:
+      operationId: runList
+      summary: ''
+      description: List all data
+      parameters: []
+      responses:
+        '200':
+          description: Found
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Product'
+        '500':
+          description: Internal error
+      tags: &ref_3
+        - PRD
+    post:
+      operationId: runCreate
+      summary: ''
+      parameters: []
+      requestBody:
+        required: true
+        description: Data
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Product'
+      responses:
+        '201':
+          description: success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+        '400':
+          description: bad request
+        '500':
+          description: internal error
+      tags: *ref_3
+  /prd/autocomplete:
+    get:
+      operationId: autoComplete
+      summary: ''
+      description: retrieve array of {_id, code, name}
+      parameters:
+        - name: keyword
+          required: true
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/'
+        '500':
+          description: Internal error
+      tags: *ref_3
+  /prd/{id}:
+    get:
+      operationId: runFindOne
+      summary: ''
+      parameters:
+        - name: id
+          required: true
+          in: path
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Founds
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+        '404':
+          description: Document not found
+        '500':
+          description: Internal error
+      tags: *ref_3
+    put:
+      operationId: runUpdate
+      summary: ''
+      parameters:
+        - name: id
+          required: true
+          in: path
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: Data
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Product'
+      responses:
+        '200':
+          description: success
+        '404':
+          description: Document not found
+        '500':
+          description: Internal error
+      tags: *ref_3
+    delete:
+      operationId: runDelete
+      summary: ''
+      parameters:
+        - name: id
+          required: true
+          in: path
+          schema:
+            type: string
+      responses:
+        '200':
+          description: success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+        '404':
+          description: Document not found
+        '500':
+          description: Internal error
+      tags: *ref_3
+  /prd/search:
+    post:
+      operationId: runSearch
+      summary: ''
+      parameters: []
+      requestBody:
+        required: true
+        description: Data
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Object'
+      responses:
+        '201':
+          description: success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Product'
+        '400':
+          description: bad request
+        '500':
+          description: internal error
+      tags: *ref_3
+  /stg:
+    get:
+      operationId: runList
+      summary: ''
+      description: List all data
+      parameters: []
+      responses:
+        '200':
+          description: Found
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Studentgroup'
+        '500':
+          description: Internal error
+      tags: &ref_4
+        - STG
+    post:
+      operationId: runCreate
+      summary: ''
+      parameters: []
+      requestBody:
+        required: true
+        description: Data
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Studentgroup'
+      responses:
+        '201':
+          description: success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Studentgroup'
+        '400':
+          description: bad request
+        '500':
+          description: internal error
+      tags: *ref_4
+  /stg/autocomplete:
+    get:
+      operationId: autoComplete
+      summary: ''
+      description: retrieve array of {_id, code, name}
+      parameters:
+        - name: keyword
+          required: true
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/'
+        '500':
+          description: Internal error
+      tags: *ref_4
+  /stg/{id}:
+    get:
+      operationId: runFindOne
+      summary: ''
+      parameters:
+        - name: id
+          required: true
+          in: path
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Founds
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Studentgroup'
+        '404':
+          description: Document not found
+        '500':
+          description: Internal error
+      tags: *ref_4
+    put:
+      operationId: runUpdate
+      summary: ''
+      parameters:
+        - name: id
+          required: true
+          in: path
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: Data
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Studentgroup'
+      responses:
+        '200':
+          description: success
+        '404':
+          description: Document not found
+        '500':
+          description: Internal error
+      tags: *ref_4
+    delete:
+      operationId: runDelete
+      summary: ''
+      parameters:
+        - name: id
+          required: true
+          in: path
+          schema:
+            type: string
+      responses:
+        '200':
+          description: success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Studentgroup'
+        '404':
+          description: Document not found
+        '500':
+          description: Internal error
+      tags: *ref_4
+  /stg/search:
+    post:
+      operationId: runSearch
+      summary: ''
+      parameters: []
+      requestBody:
+        required: true
+        description: Data
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Object'
+      responses:
+        '201':
+          description: success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Studentgroup'
+        '400':
+          description: bad request
+        '500':
+          description: internal error
+      tags: *ref_4
+info:
+  title: SimpleApp Demo1
+  description: Try CRUD
+  contact: {}
+tags: []
+servers: []
+components:
+  securitySchemes:
+    x-org:
+      type: apiKey
+      in: header
+      name: x-org
+      description: 'base 64 url encode. example: MS0xLTE'
+    oauth2:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: >-
+            https://devpg.simitgroup.com/keycloakdev/realms/simitdeveloper/protocol/openid-connect/auth
+          scopes: []
+      name: oauth2
+      in: header
+  schemas:
+    Category:
+      type: object
+      properties:
+        orgId:
+          type: number
+          description: Control value, dont edit it
+          default: 0
+        branchId:
+          type: number
+          description: Control value, dont edit it
+          default: 0
+        category_code:
+          type: string
+          format: x-document-no
+          examples:
+            - stk
+          default: ''
+        category_name:
+          type: string
+          format: x-document-name
+          examples:
+            - stocks
+          default: ''
+        description:
+          type: string
+          format: x-text
+          examples:
+            - ''
+          default: ''
+        isactive:
+          type: boolean
+          examples:
+            - true
+          default: true
+        category_type:
+          type: string
+          examples:
+            - SStock
+          default: ''
+        _id:
+          type: string
+          description: Control value, dont edit it
+          default: ''
+        doctype:
+          type: string
+          description: Control value, dont edit it
+          examples:
+            - cat
+          default: cat
+        tenantId:
+          type: number
+          description: Control value, dont edit it
+          default: 0
+        created:
+          type: string
+          description: Control value, dont edit it
+          default: ''
+        updated:
+          type: string
+          description: Control value, dont edit it
+          default: ''
+        createdby:
+          type: string
+          description: Control value, dont edit it
+          default: ''
+        updatedby:
+          type: string
+          description: Control value, dont edit it
+          default: ''
+      required:
+        - category_code
+        - category_name
+    Object:
+      type: object
+      properties: {}
+    Leadtype:
+      type: object
+      properties:
+        orgId:
+          type: number
+          description: Control value, dont edit it
+          default: 0
+        branchId:
+          type: number
+          description: Control value, dont edit it
+          default: 0
+        leadtype_code:
+          type: string
+          format: x-document-no
+          examples:
+            - FB
+          default: ''
+        leadtype_name:
+          type: string
+          format: x-document-name
+          examples:
+            - Facebook
+          default: ''
+        description:
+          type: string
+          format: x-text
+          examples:
+            - facebook marketing leads
+          default: ''
+        isactive:
+          type: boolean
+          examples:
+            - true
+          default: true
+        _id:
+          type: string
+          description: Control value, dont edit it
+          default: ''
+        doctype:
+          type: string
+          description: Control value, dont edit it
+          examples:
+            - leadt
+          default: leadt
+        tenantId:
+          type: number
+          description: Control value, dont edit it
+          default: 0
+        created:
+          type: string
+          description: Control value, dont edit it
+          default: ''
+        updated:
+          type: string
+          description: Control value, dont edit it
+          default: ''
+        createdby:
+          type: string
+          description: Control value, dont edit it
+          default: ''
+        updatedby:
+          type: string
+          description: Control value, dont edit it
+          default: ''
+      required:
+        - leadtype_code
+        - leadtype_name
+    Level:
+      type: object
+      properties:
+        orgId:
+          type: number
+          description: Control value, dont edit it
+          default: 0
+        branchId:
+          type: number
+          description: Control value, dont edit it
+          default: 0
+        level_code:
+          type: string
+          format: x-document-no
+          examples:
+            - stk
+          default: ''
+        level_name:
+          type: string
+          format: x-document-name
+          examples:
+            - stocks
+          default: ''
+        description:
+          type: string
+          format: x-text
+          examples:
+            - ''
+          default: ''
+        isactive:
+          type: boolean
+          examples:
+            - true
+          default: true
+        _id:
+          type: string
+          description: Control value, dont edit it
+          default: ''
+        doctype:
+          type: string
+          description: Control value, dont edit it
+          examples:
+            - lvl
+          default: lvl
+        tenantId:
+          type: number
+          description: Control value, dont edit it
+          default: 0
+        created:
+          type: string
+          description: Control value, dont edit it
+          default: ''
+        updated:
+          type: string
+          description: Control value, dont edit it
+          default: ''
+        createdby:
+          type: string
+          description: Control value, dont edit it
+          default: ''
+        updatedby:
+          type: string
+          description: Control value, dont edit it
+          default: ''
+      required:
+        - level_code
+        - level_name
+    ProductCategory:
+      type: object
+      properties: {}
+    ProductLevel:
+      type: object
+      properties: {}
+    ProductPricelistGroup:
+      type: object
+      properties: {}
+    ProductPricelist:
+      type: object
+      properties:
+        group:
+          $ref: '#/components/schemas/ProductPricelistGroup'
+        unitprice:
+          type: number
+          examples:
+            - 100
+          default: 0
+        effectivedate:
+          type: string
+          format: date
+          examples:
+            - '2000-01-01'
+          default: ''
+        minimalOrder:
+          type: number
+          examples:
+            - 5
+          default: 0
+      required:
+        - group
+        - unitprice
+        - effectivedate
+        - minimalOrder
+    Product:
+      type: object
+      properties:
+        orgId:
+          type: number
+          description: Control value, dont edit it
+          default: 0
+        branchId:
+          type: number
+          description: Control value, dont edit it
+          default: 0
+        product_code:
+          type: string
+          format: x-document-no
+          examples:
+            - prd1
+          default: ''
+        product_name:
+          type: string
+          format: x-document-name
+          examples:
+            - Product 1
+          default: ''
+        description:
+          type: string
+          format: x-text
+          examples:
+            - ''
+          default: ''
+        uom:
+          type: string
+          examples:
+            - unit
+          default: ''
+        sku:
+          type: string
+          examples:
+            - SIKEU001
+          default: ''
+        isactive:
+          type: boolean
+          examples:
+            - true
+          default: true
+        tags:
+          type: array
+          items:
+            type: string
+        defaultprice:
+          type: number
+          examples:
+            - 120
+          default: 0
+        category:
+          $ref: '#/components/schemas/ProductCategory'
+        level:
+          $ref: '#/components/schemas/ProductLevel'
+        pricelist:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProductPricelist'
+        _id:
+          type: string
+          description: Control value, dont edit it
+          default: ''
+        doctype:
+          type: string
+          description: Control value, dont edit it
+          examples:
+            - prd
+          default: prd
+        tenantId:
+          type: number
+          description: Control value, dont edit it
+          default: 0
+        created:
+          type: string
+          description: Control value, dont edit it
+          default: ''
+        updated:
+          type: string
+          description: Control value, dont edit it
+          default: ''
+        createdby:
+          type: string
+          description: Control value, dont edit it
+          default: ''
+        updatedby:
+          type: string
+          description: Control value, dont edit it
+          default: ''
+      required:
+        - tags
+        - category
+        - level
+        - pricelist
+    Studentgroup:
+      type: object
+      properties:
+        orgId:
+          type: number
+          description: Control value, dont edit it
+          default: 0
+        branchId:
+          type: number
+          description: Control value, dont edit it
+          default: 0
+        group_code:
+          type: string
+          format: x-document-no
+          examples:
+            - A
+          default: ''
+        group_name:
+          type: string
+          format: x-document-name
+          examples:
+            - Group A
+          default: ''
+        description:
+          type: string
+          examples:
+            - ''
+          default: ''
+        isactive:
+          type: boolean
+          examples:
+            - true
+          default: false
+        _id:
+          type: string
+          description: Control value, dont edit it
+          default: ''
+        doctype:
+          type: string
+          description: Control value, dont edit it
+          examples:
+            - stg
+          default: stg
+        tenantId:
+          type: number
+          description: Control value, dont edit it
+          default: 0
+        created:
+          type: string
+          description: Control value, dont edit it
+          default: ''
+        updated:
+          type: string
+          description: Control value, dont edit it
+          default: ''
+        createdby:
+          type: string
+          description: Control value, dont edit it
+          default: ''
+        updatedby:
+          type: string
+          description: Control value, dont edit it
+          default: ''
+security:
+  - x-org: []
+  - oauth2: []

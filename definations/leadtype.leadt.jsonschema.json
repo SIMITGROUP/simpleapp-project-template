@@ -1,0 +1,48 @@
+{
+    "type": "object",
+    "required": ["leadtype_code","leadtype_name"],
+    "properties": {
+      "orgId": {
+        "type": "integer",
+        "examples": [
+          1
+        ]
+      },
+      "branchId": {
+        "type": "integer",
+        "examples": [
+          1
+        ]
+      },    
+      "leadtype_code": {
+        "type": "string",
+        "format":"x-document-no",
+        "minLength":1,
+        "examples": [
+          "FB"
+        ]
+      },
+      "leadtype_name": {
+        "type": "string",
+        "format":"x-document-name",
+        "minLength":1,
+        "examples": [
+          "Facebook"
+        ]
+      },
+      "description": {
+        "type": "string",
+        "format":"x-text",
+        "examples": [
+          "facebook marketing leads"
+        ]
+      },
+      "isactive": {
+        "type": "boolean",
+        "examples": [
+          true
+        ],
+        "default":true
+      }
+    }
+  }

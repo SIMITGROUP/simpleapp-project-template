@@ -1,0 +1,45 @@
+{
+    "type": "object",
+    "properties": {
+      "orgId": {
+        "type": "integer",
+        "examples": [
+          1
+        ]
+      },
+      "branchId": {
+        "type": "integer",
+        "examples": [
+          1
+        ]
+      },     
+      "group_code": {
+        "type": "string",
+        "format":"x-document-no",
+        "minLength":1,
+        "examples": [
+          "A"
+        ]
+      },
+      "group_name": {
+        "type": "string",
+        "format":"x-document-name",
+        "minLength":2,
+        "examples": [
+          "Group A"
+        ]
+      },
+      "description": {
+        "type": "string",
+        "examples": [
+          ""
+        ]
+      },
+      "isactive": {
+        "type": "boolean",
+        "examples": [
+          true
+        ]
+      }
+    }
+  }

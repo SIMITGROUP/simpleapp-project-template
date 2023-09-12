@@ -1,6 +1,7 @@
 # simpleapp-project-template
 project template use to create simpleapp project
 
+***Refer [https://github.com/SIMITGROUP/simpleapp-generator](https://github.com/SIMITGROUP/simpleapp-generator) to know what is simpleapp-generator***
 # How to start:
 1. install simpleapp-generator
 ```bash
@@ -33,6 +34,7 @@ sh start-fresh.sh
 It will take quite sometimes until you can access 
 backend: http://localhost:8000/api (with multiple microservices ready)
 frontend: http://localhost:8080 (it redirect you to keycloak login page)
+
 4. `Ctrl-c` to stop the cli, future start frontend and backend separately
 ```sh
 cd backend
@@ -43,8 +45,7 @@ cd frontned
 pnpm dev
 ```
 
-
-Perform Development:
+## Perform Development:
 1. edit or add file in `definations` folder
 2. use vscode to edit generated code:
     * backend/src/docs/*

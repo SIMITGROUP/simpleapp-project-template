@@ -797,8 +797,7 @@ components:
       type: oauth2
       flows:
         implicit:
-          authorizationUrl: >-
-            https://devpg.simitgroup.com/keycloakdev/realms/simitdeveloper/protocol/openid-connect/auth
+          authorizationUrl: https://keycloak-server-url/protocol/openid-connect/auth
           scopes: []
       name: oauth2
       in: header

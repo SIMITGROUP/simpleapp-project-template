@@ -49,3 +49,7 @@ Perform Development:
 2. use vscode to edit generated code:
     * backend/src/docs/*
     * frontend/pages/[xorg]/*
+3. when you wish to regenerate source code, then run:
+```sh
+sh regenerate.sh
+```
